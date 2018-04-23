@@ -1,3 +1,3 @@
-var GoogleOAuth2StrategyMock = require('./lib/google-oauth2-mock.js');
+var googleOAuth2StrategyMock = require('./lib/google-oauth2-mock.js');
 
-module.exports = GoogleOAuth2StrategyMock;
+module.exports = googleOAuth2StrategyMock;
