@@ -1,14 +1,14 @@
-#Passport-Mock-GoogleOAuth2
+# Passport-Mock-GoogleOAuth2
 
 Passport-Mock-GoogleOAuth2 is a mock library to mocking Google OAuth2 authentication for Node.js.
 
-##Install
+## Install
 
 ```bash
 $ npm install passport-mock-googleoauth2
 ```
 
-##Usage
+## Usage
 
 Load this mock lib in your app.js file like other strategies.
 
@@ -88,25 +88,28 @@ module.exports = router;
 
 After accessing to `'/auth/google'`, you can correctly access to `'/secure'`.
 
-##Examples
+## Examples
 
 Examples are included in `/examples` dir.
 
-##Related Modules
+## Related Modules
 
 - [Passport](https://github.com/jaredhanson/passport)
 - [Express-Session](https://github.com/expressjs/session)
 
-##Tests
+## Tests
+
 ```bash
 $ npm install
 $ npm test
 ```
 
-##Credits
+## Credits
+
 - [osamtimizer](https://osamtimizer.hatenablog.com/)
 
-##License
+## License
+
 [MIT License](http://opensource.org/licenses/MIT)
 
 Copyright(c) 2018 Osamtimizer
