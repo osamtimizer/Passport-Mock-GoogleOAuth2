@@ -17,7 +17,7 @@ var express = require('express');
 var passport = require('passport');
 var session = require('express-session');
 var app = express();
-var MockStrategy = require('passport-mock-googleoauth2').GoogleOAuth2StrategyMock;
+var MockStrategy = require('passport-mock-googleoauth2');
 
 app.use(session({
   secret: 'test'
@@ -34,7 +34,7 @@ var verifyCallback = (user, done) => {
   done(null, user);
 }
 
-passport.use('google-strategy-mock', new MockStrategy(options, verifyCallback);
+passport.use('google-oauth', new MockStrategy(options, verifyCallback);
 
 passport.serializeUser((user, done) => {
   done(null, user);
