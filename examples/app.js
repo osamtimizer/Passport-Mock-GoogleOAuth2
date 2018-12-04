@@ -41,23 +41,29 @@ if (process.env.NODE_ENV === 'PRODUCTION') {
     clientSecret: google_auth.web.client_secret,
     callbackURL: '/auth/google/callback'
   };
-  verifyCallback = (accessToken, refreshToken, profile, done) => {
-    return done(null, profile);
-  };
 } else {
   AppropriateStrategy = GoogleStrategyMock;
   options = {
-    id: 1,
-    displayName: "TEST_DISPLAYNAME",
-    familyName: "TEST_FAMILYNAME",
-    givenName: "TEST_GIVENNAME",
-    value: "https://1.bp.blogspot.com/-TlOL2vS6S-E/Vu0j4QDYSnI/AAAAAAAA49o/6QO81HrDyNICgAnN67F-X0LmLgXrrSQYw/s400/computer_password_wasureta.png",
+    id:'111100000000000000011',
+    displayName: 'MOCK_DISPLAYNAME',
+    name:{
+      familyName: 'MOCK_FAMILYNAME',
+      givenName: 'MOCK_GIVENNAME'
+    },
+    emails:[{
+      value: 'googleOAuth2Mock@gmail.com',
+      type: 'account'
+    }],
+    photos:[{
+      value: 'https://1.bp.blogspot.com/-Dsklbr0IWf8/WnuyHXAKhXI/AAAAAAABKAQ/yIcH39IH6WMJ0LGi18ywqyy3jyPLAJNbACLcBGAs/s400/internet_nidankai_ninsyou.png'
+    }],
+    passAuthentication: true
   };
-  verifyCallback = (user, done) => {
-    return done(null, user);
-  };
-
 }
+
+verifyCallback = (accessToken, refreshToken, profile, done) => {
+  return done(null, profile);
+};
 
 passport.use('google-oauth', new AppropriateStrategy(options, verifyCallback));
 
