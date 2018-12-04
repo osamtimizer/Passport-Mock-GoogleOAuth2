@@ -24,14 +24,23 @@ app.use(session({
 }));
 
 var options = {
-  id: 1,
-  displayName: "Test DisplayName",
-  familyName: "Test FamilyName",
-  givenName: "Test GivenName",
+  id:'111100000000000000011',
+  displayName: 'MOCK_DISPLAYNAME',
+  name:{
+    familyName: 'MOCK_FAMILYNAME',
+    givenName: 'MOCK_GIVENNAME'
+  },
+  emails:[{
+    value: 'googleOAuth2Mock@gmail.com',
+    type: 'account'
+  }],
+  photos:[{
+    value: 'https://1.bp.blogspot.com/-Dsklbr0IWf8/WnuyHXAKhXI/AAAAAAABKAQ/yIcH39IH6WMJ0LGi18ywqyy3jyPLAJNbACLcBGAs/s400/internet_nidankai_ninsyou.png'
+  }],
   passAuthentication: true
 };
-var verifyCallback = (user, done) => {
-  done(null, user);
+var verifyCallback = (accessToken, refreshToken, profile, done) => {
+  done(null, profile);
 }
 
 passport.use('google-oauth', new MockStrategy(options, verifyCallback);
